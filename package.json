@@ -1,19 +1,70 @@
 {
-  "name": "web_proj",
-  "version": "1.0.0",
-  "description": "Web Development final Project",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "mern-expense-tracker",
+  "version": "2.0.0",
+  "description": "A MERN stack based expense tracking application",
+  "author": "Shama Hoque",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "express",
+    "mongodb",
+    "node",
+    "mern"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Raviteja582/web_development_final_project.git"
+    "url": "https://github.com/shamahoque/mern-skeleton.git"
   },
-  "author": "Raviteja582",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Raviteja582/web_development_final_project/issues"
+  "homepage": "https://github.com/shamahoque/mern-skeleton",
+  "main": "./dist/server.generated.js",
+  "scripts": {
+    "development": "nodemon",
+    "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
+    "start": "NODE_ENV=production node ./dist/server.generated.js"
   },
-  "homepage": "https://github.com/Raviteja582/web_development_final_project#readme"
+  "engines": {
+    "node": "13.12.0",
+    "npm": "6.14.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^6.0.0",
+    "nodemon": "^2.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@date-io/date-fns": "1.x",
+    "@hot-loader/react-dom": "^16.13.0",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/pickers": "^3.3.11",
+    "@material-ui/styles": "^4.11.5",
+    "@types/react-router-dom": "^5.3.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "date-fns": "^2.11.1",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "helmet": "^3.22.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "material-ui": "^0.20.2",
+    "mongoose": "^5.9.7",
+    "query-string": "^6.11.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-loader": "^4.12.20",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "victory": "^34.1.3"
+  }
 }
