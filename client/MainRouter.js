@@ -12,7 +12,6 @@ import NewExpense from "./expense/NewExpense";
 import Expenses from "./expense/Expenses";
 import Reports from "./report/Reports";
 import FinancialGoals from "./expense/FinancialGoals";
-import RecurringBill from "./expense/RecurringBill";
 import About from "./core/About";
 
 const MainRouter = () => {
@@ -31,10 +30,6 @@ const MainRouter = () => {
         <PrivateRoute
           path="/expenses/financialgoals"
           component={FinancialGoals}
-        />
-        <PrivateRoute
-          path="/expenses/recurringBill"
-          component={RecurringBill}
         />
         <PrivateRoute path="/expenses/new" component={NewExpense} />
         <PrivateRoute path="/expenses/reports" component={Reports} />
