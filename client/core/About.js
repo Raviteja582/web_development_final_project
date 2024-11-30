@@ -8,11 +8,26 @@ import {
   TableRow,
   Paper,
 } from "@material-ui/core/";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  info: {
+    border: "1px solid",
+    margin: 20,
+    padding: 20,
+  },
+  heading: {
+    marginLeft: '25%'
+  },
+}));
 
 function About() {
+  const classes = useStyles();
   return (
-    <div>
-      <h1>Expense Tracking App: Your Financial Assistant</h1>
+    <div className={classes.info}>
+      <h1 className={classes.heading}>
+        Expense Tracking App: Your Financial Assistant
+      </h1>
 
       <h2>What is an Expense Tracking App?</h2>
       <p>
@@ -36,26 +51,40 @@ function About() {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Feature</TableCell>
-              <TableCell>Description</TableCell>
+              <TableCell><strong>Features</strong></TableCell>
+              <TableCell><strong>Description</strong></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell>Expense Entry</TableCell>
+              <TableCell><strong>Expense Entry</strong></TableCell>
               <TableCell>
                 Allows users to input details about each expense, including
                 date, category, amount, and description.
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Category Tracking</TableCell>
+              <TableCell><strong>Category Tracking</strong></TableCell>
               <TableCell>
                 Categorizes expenses into different groups (e.g., food,
                 transportation, entertainment) for better analysis.
               </TableCell>
             </TableRow>
-            {/* ... other rows for remaining features ... */}
+            <TableRow>
+              <TableCell><strong>Visual Charts</strong></TableCell>
+              <TableCell>
+                Display Visual Charts of Expenses based on Pie Charts, Bar
+                charts and Scatter Plot Chart
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell><strong>Financial Goals</strong></TableCell>
+              <TableCell>
+                Provide interface to add the personal goals to achieve there
+                Financial Necessities with proper tracking of investement and
+                timeline.
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </TableContainer>
