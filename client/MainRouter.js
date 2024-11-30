@@ -13,6 +13,7 @@ import Expenses from "./expense/Expenses";
 import Reports from "./report/Reports";
 import FinancialGoals from "./expense/FinancialGoals";
 import About from "./core/About";
+import ContactForm from "./core/Contact";
 
 const MainRouter = () => {
   return (
@@ -21,6 +22,7 @@ const MainRouter = () => {
       <Switch>
         <Route exact path="/" default component={Home} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={ContactForm} />
         <Route path="/users" component={Users} />
         <Route path="/signup" component={Signup} />
         <Route path="/signin" component={Signin} />

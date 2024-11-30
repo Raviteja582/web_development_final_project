@@ -37,11 +37,23 @@ const Menu = withRouter(({ history }) => (
             <HomeIcon /> Home
           </IconButton>
         </Link>
-        <Link to="/about">
-          <IconButton aria-label="About" style={isActive(history, "/about")}>
-            <Info /> About
-          </IconButton>
-        </Link>
+        {!auth.isAuthenticated() && (
+          <Link to="/about">
+            <IconButton aria-label="About" style={isActive(history, "/about")}>
+              <Info /> About
+            </IconButton>
+          </Link>
+        )}
+        {!auth.isAuthenticated() && (
+          <Link to="/contact">
+            <IconButton
+              aria-label="Contact"
+              style={isActive(history, "/contact")}
+            >
+              <Info /> Contact
+            </IconButton>
+          </Link>
+        )}
         {auth.isAuthenticated() && (
           <span>
             <Link to={"/expenses/all"}>

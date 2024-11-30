@@ -1,6 +1,5 @@
 const createGoal = async (credentials, goal) => {
   try {
-    console.log("[frontend] making API request");
     let response = await fetch("/api/goals/", {
       method: "POST",
       headers: {
@@ -11,7 +10,6 @@ const createGoal = async (credentials, goal) => {
       body: JSON.stringify(goal),
     });
     const result = await response.json();
-    console.log("[frontend] returned result: ", result);
     return result;
   } catch (err) {
     console.log(err);

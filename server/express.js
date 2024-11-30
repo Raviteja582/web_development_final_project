@@ -10,6 +10,7 @@ import userRoutes from "./routes/user.routes";
 import authRoutes from "./routes/auth.routes";
 import expenseRoutes from "./routes/expense.routes";
 import goalsRoutes from "./routes/goals.routes";
+import contactRoutes from "./routes/contact.routes";
 
 // modules for server side rendering
 import React from "react";
@@ -46,6 +47,7 @@ app.use("/", userRoutes);
 app.use("/", authRoutes);
 app.use("/", expenseRoutes);
 app.use("/", goalsRoutes);
+app.use("/", contactRoutes);
 
 app.get("*", (req, res) => {
   const sheets = new ServerStyleSheets();
