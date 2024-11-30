@@ -8,10 +8,8 @@ import { ObjectId } from "mongoose";
 const createGoal = async (req, res) => {
   try {
     req.body.recorded_by = req.auth._id;
-    console.log("[backend] received goal: ", req.body);
     const goal = new Goals(req.body);
     const dbRes = await goal.save();
-    console.log("[backend] response from db: ", dbRes);
     return res.status(200).json({
       id: dbRes._id,
     });
@@ -24,7 +22,6 @@ const createGoal = async (req, res) => {
 
 const updateGoal = async (req, res) => {
   try {
-    console.log("received request: ", req.goal, req.body);
     let goal = req.goal;
     goal.savedAmount = req.body.savedAmount;
     goal.amountRequired = req.body.amountRequired;
@@ -54,7 +51,6 @@ const removeGoal = async (req, res) => {
 
 const getGoalById = async (req, res, next, id) => {
   try {
-    console.log("goal Id: ", id);
     let goal = await Goals.findById(id);
     if (isEmpty(goal)) {
       return res.status("400").json({
@@ -88,7 +84,6 @@ const getAllGoals = async (req, res) => {
     const goals = await Goals.find({
       recorded_by: mongoose.Types.ObjectId(userId),
     });
-    console.log("retrieved goals: ", goals);
     return res.json(goals);
   } catch (err) {
     console.log(err);
