@@ -97,7 +97,7 @@ function ContactForm() {
   return (
     <div>
       <Card className={classes.card}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
           <CardContent className={classes.content}>
             <div className={classes.formGroup}>
               <label htmlFor="firstName">First Name:</label>
@@ -109,6 +109,7 @@ function ContactForm() {
                 value={formData.firstName}
                 onChange={handleChange}
                 required
+                autoComplete="off"
               />
             </div>
           </CardContent>
@@ -121,6 +122,7 @@ function ContactForm() {
                 id="lastName"
                 name="lastName"
                 value={formData.lastName}
+                autoComplete="off"
                 onChange={handleChange}
                 required
               />
@@ -136,6 +138,7 @@ function ContactForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                autoComplete="off"
                 required
               />
             </div>
@@ -150,6 +153,7 @@ function ContactForm() {
                 name="mobilePhone"
                 value={formData.mobilePhone}
                 onChange={handleChange}
+                autoComplete="off"
                 required
               />
             </div>
